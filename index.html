@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mull</title>
+  <meta name="description" content="Short daily drills for addition, subtraction, multiplication, and division facts.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f5d50'/%3E%3Cpath d='M9 16h14M16 9v14' stroke='%23f4efe4' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="home" class="page">
+    <header class="masthead">
+      <div>
+        <h1 class="wordmark">Mull</h1>
+        <p class="tagline">A few minutes a day, until the facts are automatic.</p>
+      </div>
+      <p id="streak" class="streak"></p>
+    </header>
+
+    <section aria-labelledby="choose-heading">
+      <h2 id="choose-heading" class="label">Practice</h2>
+      <div id="modes" class="modes"></div>
+    </section>
+
+    <section class="controls">
+      <div class="control">
+        <h2 class="label" id="length-label">Round length</h2>
+        <div id="length" class="segments" role="group" aria-labelledby="length-label"></div>
+      </div>
+      <div class="control">
+        <h2 class="label" id="target-label">Counts as fast</h2>
+        <div id="target" class="segments" role="group" aria-labelledby="target-label"></div>
+      </div>
+      <button id="start" class="primary" type="button">Start round</button>
+    </section>
+
+    <section aria-labelledby="progress-heading">
+      <div class="section-head">
+        <h2 id="progress-heading" class="label">Your facts</h2>
+        <ul class="legend">
+          <li><i class="swatch new"></i>Not yet</li>
+          <li><i class="swatch learning"></i>Learning</li>
+          <li><i class="swatch fluent"></i>Fluent</li>
+          <li><i class="swatch mastered"></i>Mastered</li>
+        </ul>
+      </div>
+      <div id="grids" class="grids"></div>
+    </section>
+
+    <footer class="foot">
+      <p>Progress is saved in this browser only.</p>
+      <button id="reset" class="link" type="button">Reset progress</button>
+    </footer>
+  </main>
+
+  <main id="round" class="round" hidden>
+    <div class="round-bar">
+      <div class="clock" aria-hidden="true"><div id="clock-fill"></div></div>
+      <span id="clock-text" class="clock-text"></span>
+      <span id="score" class="score"></span>
+      <button id="end" class="link" type="button">End</button>
+    </div>
+
+    <div class="stage">
+      <p id="equation" class="equation">
+        <span id="left"></span>
+        <span id="symbol" class="op"></span>
+        <span id="right"></span>
+        <span class="op">=</span>
+        <span id="entry" class="entry"></span>
+      </p>
+      <div class="pace" aria-hidden="true"><div id="pace-fill"></div></div>
+      <p id="hint" class="hint" role="status"></p>
+    </div>
+
+    <div id="keypad" class="keypad"></div>
+  </main>
+
+  <main id="summary" class="page summary" hidden>
+    <h1 class="summary-title" id="summary-title"></h1>
+    <dl class="stats" id="stats"></dl>
+    <div id="summary-lists" class="summary-lists"></div>
+    <div class="summary-actions">
+      <button id="again" class="primary" type="button">Another round</button>
+      <button id="done" class="secondary" type="button">Done</button>
+    </div>
+  </main>
+
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
